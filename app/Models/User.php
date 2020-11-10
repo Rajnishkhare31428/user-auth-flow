@@ -26,6 +26,7 @@ class User extends Authenticatable
         'state_id',
         'country_id',
         'remember_token'
+        
     ];
 
     /**
