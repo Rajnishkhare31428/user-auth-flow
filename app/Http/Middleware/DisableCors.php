@@ -16,6 +16,9 @@ class DisableCors
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        return $next($request)
+        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->header('Access-Control-Allow-Headers', 'X-Powered-By, X-Requested-With, Content-Type, X-Token-Auth, Authorization, accept');
     }
 }
