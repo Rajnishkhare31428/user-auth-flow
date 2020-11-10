@@ -17,10 +17,15 @@ class UserController extends Controller
     public function update(Request $request, $id) {
         return User::find($id)->update($request->all());
     }
-    public function store(Request $request) {
+    public function register(Request $request) {
         return User::create($request->all());
     }
     public function destroy($id) {
         return User::find($id)->delete();
+    }
+    public function login(Request $request) {
+        $active_user =  User::where([['email', '=', $request->email], ['password', '=', $request->password]])->get();
+
+        return $active_user;
     }
 }

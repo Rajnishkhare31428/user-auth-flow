@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 
-[UserController::class, 'index'
-]);
+Route::get('/', [UserController::class, 'index']);
+
+Route::post('/login', [UserController::class, 'login']);
+
+Route::post('/register', [UserController::class, 'register']);
+
+Route::post('/update', [UserController::class, 'update']);
