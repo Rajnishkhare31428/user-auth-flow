@@ -24,7 +24,7 @@ class UserController extends Controller
             $validated_data = $request->validate([
                 'name' => 'required|max:60',
                 'email' => 'required|email:rfc',
-                'password' => 'required|min:8|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
+                'password' => 'required|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
                 'gender' => 'required',
                 'contact' => 'required',
                 'confirm_password' => 'required|same:password'
