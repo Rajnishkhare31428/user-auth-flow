@@ -64,7 +64,7 @@ class UserController extends Controller
     public function login(Request $request) {
         $active_user =  User::where([['email', '=', $request->email], ['password', '=', $request->password]])->get();
         if (sizeof($active_user) > 0) {
-            active_users::where(['user_id', '=', $active_user[0]->id])->delete();
+            active_users::where([['user_id', '=', $active_user[0]->id]])->delete();
             $current_user = active_users::create([
                 'user_id' => $active_user[0]->id,
                 'auth_token' => Str::random(60),
