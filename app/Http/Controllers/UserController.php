@@ -58,6 +58,9 @@ class UserController extends Controller
     public function destroy($id) {
         return User::find($id)->delete();
     }
+    public function getActiveUsers() {
+        return active_users::all();
+    }
     public function login(Request $request) {
         $active_user =  User::where([['email', '=', $request->email], ['password', '=', $request->password]])->get();
         if (sizeof($active_user) > 0) {
@@ -77,6 +80,7 @@ class UserController extends Controller
             'auth_token' => null,
             'status' => 'login_failed',
             'message' => 'Bad credentials, maybe such user dont exist'
-        ]; 
+        ];
+        
     }
 }
