@@ -20,9 +20,9 @@ class postController extends Controller
 
     }
     function createPost(Request $request) {
-
+        
     }
     function updatePost(Request $request) {
-        
+
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\postController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,5 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
 
 Route::post('/update', [UserController::class, 'update']);
+
+Route::post('/createPost', [postController::class, 'createPost']);
