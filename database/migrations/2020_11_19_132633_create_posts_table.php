@@ -18,8 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('content');
             $table->string('description')->nullable();
             $table->integer('user_id');
-            $table->integer('like_counts')->default(0);
-            $table->integer('comment_counts')->default(0);
+            $table->integer('like_counts')->default('0');
+            $table->integer('comment_counts')->default('0');
             $table->timestamps();
         });
     }

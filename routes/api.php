@@ -20,6 +20,8 @@ Route::get('/', [UserController::class, 'index']);
 
 Route::get('/activeUsers', [UserController::class, 'getActiveUsers']);
 
+Route::post('/getUserId', [postController::class, 'getUserId']);
+
 Route::post('/login', [UserController::class, 'login']);
 
 Route::post('/register', [UserController::class, 'register']);
@@ -27,3 +29,5 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/update', [UserController::class, 'update']);
 
 Route::post('/createPost', [postController::class, 'createPost']);
+
+Route::get('/getAllPosts', [postController::class, 'getAllPosts']);
