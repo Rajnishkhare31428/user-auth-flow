@@ -35,7 +35,10 @@ class postController extends Controller
             $myRequest = $request->all();
             $myRequest['user_id'] = $user_id;
             post::create($myRequest);
-            return 'Post has been created';
+            return [
+                'status' => 'post_ok',
+                'message' => 'Post has been created',
+            ];
         }
     }
     function updatePost(Request $request) {
